@@ -2,16 +2,32 @@
 //
 
 #include "my_header.h"
-#include "TP_lib.h"
+#include "TP_Lib"
+
 
 int main(void)
 {
-    short resultat, i=0;
-    while(i<10)
-    {
-        resultat =
-    LancerDe();
-    i++;
-    }
+unsigned char resultat,LancerDe,tirage;
+		 unsigned char points=0;
+	
+    while(tirage<2)
+	{
+    resultat=LancerDe;
+	
+	if(resultat%2==0)
+
+	 points=points+resultat;
+	 
+	 else if (resultat==3)
+	 
+	points= points*2;
+	 
+	 
+	 else 
+	 
+	points=points-2;
+	 
+	}
+
     return 0;
 }
