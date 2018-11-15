@@ -7,12 +7,12 @@
 
 int main(void)
 {
-unsigned char resultat,LancerDe;
+unsigned char resultat;
 		 char points=0;
 	
-    while(LancerDe<2)
+    while(LancerDe()<2)
 	{
-    resultat=LancerDe;
+    resultat=LancerDe();
 	
 	if(resultat%2==0)
 
