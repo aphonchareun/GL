@@ -4,12 +4,13 @@
 #include "my_header.h"
 #include "TP_lib.h"
 
+
 int main(void)
 {
-unsigned char resultat,LancerDe,tirage;
-		 unsigned char points=0;
+unsigned char resultat,LancerDe;
+		 char points=0;
 	
-    while(tirage<2)
+    while(LancerDe<2)
 	{
     resultat=LancerDe;
 	
@@ -25,7 +26,8 @@ unsigned char resultat,LancerDe,tirage;
 	 else 
 	 
 	points=points-2;
-	 
+	if (points<0)
+	 points=0;        //il n'y a pas de dette !
 	}
 
     return 0;
