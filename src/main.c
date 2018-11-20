@@ -10,15 +10,18 @@
 int main(void)
 {
 	unsigned char bin[10] = {1,17,14,16,9,3,7,17,0,12};
-	int sat[10] = {rand()%200,rand()%200,rand()%200,rand()%200,rand()%200,rand()%200,rand()%200,rand()%200,rand()%200,rand()%200};
+	int sat[10] = {rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,rand()%300-200,};
 	unsigned char dist[10] = {1,5,8,10,14,16,30,35,40,50};
-	int i=0, o=0 ;
+	unsigned char a[5] = {1,5,7,9,3};
+	unsigned char b[5] = {0,0,0,0,0};
+	unsigned char miroir[10] = {10,20,30,40,50};
+	int i, o, p, d, k, l, distance;
 	
 	
 	for(i=0; i<10; i++)
 	{
 		if (bin[i] <SEUIL)
-		{	
+		{											  
 			bin[i] =0;
 		}	
 		else
@@ -28,10 +31,10 @@ int main(void)
 
 	}
 
-
+   		srand(time(NULL)); 
 	for(o=0; o<10; o++)
 	{
-		srand(time(NULL));
+
 		if (sat[o] <SEUILB)
 		{	
 			sat[o] =SEUILB;
@@ -44,7 +47,28 @@ int main(void)
 	}
 	
 	
+	for (p=0;p<10;p++)
+	{
+		if (p==0)
+		{
+			dist[p]= dist[p] ;
+		}
+		else 
+		{
+		d=p-1;
+		distance = dist[p]-dist[d];
+		}
+	}			   
+		
+	for (k=0;k<5;k++)
+	{
+	 b[k]= a[4-k];
+	}
 	
+	for (l=0;l<10;l++)
+	{
+	 miroir[l+5] =miroir[4-l];
+	}
 	
 	return 0;
 }
