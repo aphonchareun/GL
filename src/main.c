@@ -1,55 +1,45 @@
 //  Copyright (c) 2018 Antoine Tran Tan
 //
-
 #include "my_header.h"
 #include "TP_lib_suite.h"
 
-
-short tirerNumero (void);
-
 int main(void)
 {
-	unsigned char joueur[6] = { 5, 35, 43, 13, 10, 8};
-	short gagnante[6] = {tirerNumero(),tirerNumero(),tirerNumero(),tirerNumero(),tirerNumero(),tirerNumero()} ;
+	unsigned char joueur[6] = {28, 35, 43, 33, 23, 8};
+	short gagnante[6] ;
+	unsigned char i,j,o,g;
 	unsigned char nombre_correcte=0;
-	unsigned char i,j,o;
-	unsigned char combiMax=0;
-	unsigned char combi=0;
-	unsigned char gagnant=0;
-	
+	unsigned char CombiMax=0;
+	unsigned char Combi=0;
 	
 for (o=0;o<100;o++)
 {
-	for (i=0;i<6;i++)
+	initialiserTirage();
+	nombre_correcte=0;
+	
+	for (g=0;g<6;g++)
 	{
-		for (j=0; j<6;j++)
-	  {
-			if (joueur[i]==gagnante[j])
-			{
-			nombre_correcte++;
-			}											   
-				else 
+		gagnante[g] = tirerNumero() ;
+	}							   
+	
+		for (i=0;i<6;i++)
+		{
+			for (j=0; j<6;j++)
+	 		 {
+				if (joueur[i]==gagnante[j])
 				{
-				nombre_correcte = nombre_correcte;
-				}
-	   		
-			if (nombre_correcte>1)
-	 		{
-			 gagnant= gagnant +1 ;
-	 		}
-	 	combi = nombre_correcte; 
-	 
-	 	if (combi >combiMax)
-	 	{
-	 	combiMax = combi;
-	 	}
-	 
-	  }
-	}
+				nombre_correcte++;
+				}											   
+			 }
+		}
+	  Combi = nombre_correcte;
+	  
+	  if (Combi>CombiMax)
+		  CombiMax=Combi;
+	  
+	  else
+		  CombiMax=CombiMax;
 	
-	 
-	
-}			
+}
     return 0;
-
 }
