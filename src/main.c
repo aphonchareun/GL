@@ -65,9 +65,9 @@ int main(void)
 	 b[k]= a[4-k];
 	}
 	
-	for (l=0;l<10;l++)
+	for (l=0;l<10/2;l++)
 	{
-	 miroir[l+5] =miroir[4-l];
+	miroir[l + 10/2] = miroir[-l + 10/2 -1];
 	}
 	
 	return 0;
