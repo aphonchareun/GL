@@ -15,7 +15,7 @@ int main(void)
 	unsigned char a[5] = {1,5,7,9,3};
 	unsigned char b[5] = {0,0,0,0,0};
 	unsigned char miroir[10] = {10,20,30,40,50};
-	int i, o, p, d, k, l, distance;
+	 unsigned int i, o, p, d, k, l, distance;
 	
 	
 	for(i=0; i<10; i++)
